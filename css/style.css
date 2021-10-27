@@ -25,6 +25,7 @@
 }
 
 .item {
+    display: none;
     position: relative;
     width: 100%;
     height: 100%;
@@ -56,7 +57,7 @@
     color: white;
 }
 
-.thumbs .prox {
+.thumbs .next {
     position: absolute;
     bottom: 2%;
     left: 45%;
@@ -66,16 +67,18 @@
 .thumb {
     height: 20%;
     width: 100%;
-    filter: opacity(0.5);
     border: 1px solid black;
+    filter: opacity(0.5);
 }
 
 .active {
+    display: block;
     filter: opacity(1);
 }
 
 .thumb img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 

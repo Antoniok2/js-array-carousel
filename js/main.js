@@ -22,3 +22,32 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
+const itemsCont = document.querySelector(".items")
+const thumbsCont = document.querySelector(".thumbs")
+
+let item = "";
+let thumbs = "";
+
+for (let i = 0; i < items.length; i++) {
+    item += `
+    <div class="item">
+        <img src="${items[i]}" alt="01">
+        <div class="text">
+            <h3>${title[i]}</h3>
+            <p>${text[i]}</p>
+        </div>
+    </div>`;
+
+    thumbs += `
+    <div class="thumb">
+        <img src="${items[i]}" alt="01">
+    </div>
+    <div class="prev"><i class="fas fa-arrow-circle-up"></i></div>
+    <div class="next"><i class="fas fa-arrow-circle-down"></i></div>`
+}
+
+itemsCont.innerHTML = item;
+document.getElementsByClassName("item")[0].classList.add("active");
+
+thumbsCont.innerHTML = thumbs;
+document.getElementsByClassName("thumb")[0].classList.add("active");
