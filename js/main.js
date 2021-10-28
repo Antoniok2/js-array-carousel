@@ -73,3 +73,22 @@ down.addEventListener('click',
 
     }
 );
+
+// CREO UN EVENTO FRECCIETTA SOPRA 
+const Up = document.querySelector(".prev");
+Up.addEventListener('click',
+    function(){
+        activePosition = activePosition - 1;
+        if (activePosition < 0) {
+            activePosition = 4;
+        }
+        
+
+        document.querySelector(".item.active").classList.remove("active");
+        document.getElementsByClassName("item")[activePosition].classList.add("active");
+
+        document.querySelector(".thumb.active").classList.remove("active");
+        document.getElementsByClassName("thumb")[activePosition].classList.add("active");
+
+    }
+);
