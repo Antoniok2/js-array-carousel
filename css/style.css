@@ -53,10 +53,11 @@
 
 .thumbs .prev {
     position: absolute;
-    color: white;
+    color: black;
     cursor: pointer;
     top: 2%;
     left: 45%;
+    z-index: 999;
 }
 
 .thumbs .prev:hover {
@@ -67,8 +68,9 @@
     position: absolute;
     bottom: 2%;
     left: 45%;
-    color: white;
     cursor: pointer;
+    z-index: 999;
+    color: black;
 }
 
 .thumbs .next:hover {

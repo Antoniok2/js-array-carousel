@@ -25,9 +25,8 @@ const text = [
 // VARIABILI
 const itemsCont = document.querySelector(".items")
 const thumbsCont = document.querySelector(".thumbs")
-const down = document.querySelector(".next");
 let item = "";
-let thumbs = "";
+let thumb = "";
 
 // STO ANDANDO A CREARE UN CICLO IN MODO TALE CHE MI CREA I DIV PER L'HTML
 for (let i = 0; i < items.length; i++) {
@@ -40,29 +39,33 @@ for (let i = 0; i < items.length; i++) {
         </div>
     </div>`;
 
-    thumbs += `
+    thumb += `
     <div class="thumb">
         <img src="${items[i]}" alt="01">
     </div>
-    <div class="prev"><i class="fas fa-arrow-circle-up"></i></div>
-    <div class="next"><i class="fas fa-arrow-circle-down"></i></div>`
+    `
 }
 
-// STO AGGIUNGENDO LA CLASSE ACTIVE PER VISUALIZZARE SOLO QUELLO CHE MI SERVE
-itemsCont.innerHTML += item;
+// STO AGGIUNGENDO LA CLASSE ACTIVE PER VISUALIZZARE SU HTML
+itemsCont.innerHTML = item;
 document.getElementsByClassName("item")[0].classList.add("active");
 
-thumbsCont.innerHTML += thumbs;
+thumbsCont.innerHTML += thumb;
 document.getElementsByClassName("thumb")[0].classList.add("active");
 
+// PER GESTIRE IL CLICK CREO UNA VARIABILE
 let activePosition = 0;
 
+// CREO UN EVENTO SUL PULSANTE FRECCIETTA SOTTO
+const down = document.querySelector(".next");
 down.addEventListener('click',
     function(){
+        activePosition = activePosition + 1;
+        
 
-        ++activePosition;
         document.querySelector(".item.active").classList.remove("active");
         document.getElementsByClassName("item")[activePosition].classList.add("active");
+
         document.querySelector(".thumb.active").classList.remove("active");
         document.getElementsByClassName("thumb")[activePosition].classList.add("active");
 
