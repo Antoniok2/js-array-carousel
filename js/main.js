@@ -61,7 +61,9 @@ const down = document.querySelector(".next");
 down.addEventListener('click',
     function(){
         activePosition = activePosition + 1;
-        
+        if (activePosition == items.length) {
+            activePosition = 0;
+        }
 
         document.querySelector(".item.active").classList.remove("active");
         document.getElementsByClassName("item")[activePosition].classList.add("active");
